@@ -1,15 +1,18 @@
-import './App.css';
-
-const handleClick = (e) => {
-  console.log(e.target);
-}
+import React, {useState} from "react";
 
 function App() {
+  const [fucked, setFucked] = useState(false);
+
+  console.log("Subscribed status:", fucked);
+
+
   return (
-    <div>  
-    <h1>Hello Shalaina!</h1>
-    <button onClick={handleClick}>Subscribe</button>
-    </div>
+    <section>  
+      <p>Hello Shalaina!</p>
+      <button onClick={() => setFucked(!fucked)}>
+        {fucked ? "You have fucked me" : "Fuck Me"}
+      </button>
+    </section>
   )
 }
 
